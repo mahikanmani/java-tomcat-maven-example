@@ -2,7 +2,11 @@
 - hosts: all
   become: true
   tasks:
-    - name: remove docker images
-      shell: docker images rm -f bhuvaneshwaran14/project:latest
+    - name: stop container
+      shell: docker stop demo
+    - name: remove container
+      shell: docker rm -f demo
+    - name: remove container
+      shell: docker rmi -f bhuvaneshwaran14/demo:latest
     - name: create docker container
-      shell: docker run -itd  --name webapp -p 80:8080 bhuvaneshwaran14/project:latest
+      shell: docker run -itd  --name demo -p 80:8080 bhuvaneshwaran14/demo:latest
