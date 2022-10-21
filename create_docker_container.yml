@@ -3,10 +3,10 @@
   become: true
   tasks:
     - name: stop container
-      shell: docker stop demo
+      shell: docker stop bhuvan
     - name: remove container
-      shell: docker rm -f demo
+      shell: docker rm -f bhuvan
     - name: remove container
-      shell: docker rmi -f bhuvaneshwaran14/demo:latest
+      shell: docker rmi -f bhuvaneshwaran14/bhuvan:latest
     - name: create docker container
-      shell: docker run -itd  --name demo -p 80:8080 bhuvaneshwaran14/demo:latest
+      shell: docker run -itd  --name bhuvan -p 80:8080 bhuvaneshwaran14/bhuvan:latest
